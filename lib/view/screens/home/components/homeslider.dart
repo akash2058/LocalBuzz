@@ -91,7 +91,7 @@ class _HomeSlider extends State<HomeSlider> {
               ),
               Positioned(
                 bottom: 10,
-                right: 150,
+                right: 170,
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: Row(

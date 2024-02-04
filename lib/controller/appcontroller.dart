@@ -8,6 +8,7 @@ import 'package:localbuzz/view/screens/profile/profile.dart';
 import 'package:localbuzz/view/screens/search/search.dart';
 
 class AppController extends ChangeNotifier {
+  ScrollController scrollController = ScrollController();
   int currenttab = 0;
   int currentpage = 0;
   List<Widget> screens = [
@@ -33,5 +34,13 @@ class AppController extends ChangeNotifier {
     'KidSport LLB Chapter',
     'Lac La Biche Massage Therapy',
     'Lac La Biche Massage Therapy',
+  ];
+  List<String> imges = [
+    AppImages.imgone,
+    AppImages.imgtwo,
+    AppImages.imgthree,
+    AppImages.imgfour,
+    AppImages.imgfive,
+    AppImages.imgsix
   ];
 }

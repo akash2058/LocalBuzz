@@ -6,11 +6,14 @@ import 'package:localbuzz/view/constraints/appfonts.dart';
 class CustomButton extends StatelessWidget {
   String title;
   VoidCallback ontap;
-  CustomButton({
-    super.key,
-    required this.title,
-    required this.ontap,
-  });
+  Color? backgroundcolor;
+  Color? textcolor;
+  CustomButton(
+      {super.key,
+      required this.title,
+      required this.ontap,
+      this.backgroundcolor,
+      this.textcolor});
 
   @override
   Widget build(BuildContext context) {
@@ -18,15 +21,14 @@ class CustomButton extends StatelessWidget {
       height: 52.h,
       width: 138.w,
       child: ElevatedButton(
-          style:
-              ElevatedButton.styleFrom(backgroundColor: AppColor.primaryyellow),
+          style: ElevatedButton.styleFrom(backgroundColor: backgroundcolor),
           onPressed: ontap,
           child: Text(
             title,
             style: TextStyle(
               fontSize: 16.h,
               fontWeight: FontWeight.w700,
-              color: AppColor.primarywhite,
+              color: textcolor,
               fontFamily: AppFonts.manormafont,
             ),
           )),

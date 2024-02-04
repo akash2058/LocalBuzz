@@ -1,26 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:localbuzz/customwidget/custombutton.dart';
+import 'package:localbuzz/view/constraints/appcolor.dart';
 import 'package:localbuzz/view/constraints/appfonts.dart';
 import 'package:localbuzz/view/constraints/appicons.dart';
 
 class CustomCard extends StatelessWidget {
   String image;
-  String location;
-  String country;
-  String date;
-
+  String? location;
+  String? country;
+  String? date;
+  IconData? icon;
   String title;
   String description;
   VoidCallback onpress;
+  String? time;
 
   CustomCard(
       {super.key,
       required this.image,
-      required this.date,
-      required this.location,
-      required this.country,
+      this.date,
+      this.location,
+      this.country,
       required this.description,
+      this.time,
+      this.icon,
       required this.onpress,
       required this.title});
 
@@ -38,9 +42,9 @@ class CustomCard extends StatelessWidget {
               width: MediaQuery.sizeOf(context).width,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(24.r),
-                  image:  DecorationImage(
+                  image: DecorationImage(
                       image: AssetImage(
-                       image,
+                        image,
                       ),
                       fit: BoxFit.cover)),
             ),
@@ -57,7 +61,7 @@ class CustomCard extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            location,
+                            location ?? '',
                             style: TextStyle(
                               fontFamily: AppFonts.manormafont,
                               fontWeight: FontWeight.w400,
@@ -67,22 +71,24 @@ class CustomCard extends StatelessWidget {
                           Row(
                             children: [
                               Text(
-                                country,
+                                country ?? '',
                                 style: TextStyle(
                                   fontFamily: AppFonts.manormafont,
                                   fontWeight: FontWeight.w400,
                                   fontSize: 14.h,
                                 ),
                               ),
-                              const Icon(Icons.location_on)
+                              Icon(icon)
                             ],
                           ),
                         ],
                       ),
                       Text(
-                        date,
+                        date ?? '',
                         style: TextStyle(
-                            fontSize: 14.h, fontFamily: AppFonts.manormafont,fontWeight: FontWeight.w400),
+                            fontSize: 14.h,
+                            fontFamily: AppFonts.manormafont,
+                            fontWeight: FontWeight.w400),
                       )
                     ],
                   ),
@@ -108,7 +114,23 @@ class CustomCard extends StatelessWidget {
                   SizedBox(
                     height: 20.h,
                   ),
-                  CustomButton(title: 'ReadMore', ontap: onpress),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CustomButton(
+                          textcolor: AppColor.primarywhite,
+                          backgroundcolor: AppColor.primaryyellow,
+                          title: 'ReadMore',
+                          ontap: onpress),
+                      Text(
+                        time ?? '',
+                        style: TextStyle(
+                            fontSize: 14.h,
+                            fontFamily: AppFonts.manormafont,
+                            fontWeight: FontWeight.w400),
+                      )
+                    ],
+                  ),
                   SizedBox(
                     height: 18.h,
                   ),

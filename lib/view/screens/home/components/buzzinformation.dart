@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:localbuzz/view/constraints/appcolor.dart';
 import 'package:localbuzz/view/constraints/appfonts.dart';
+import 'package:localbuzz/view/screens/home/components/eventfeaturedtitle.dart';
 
 class BuzzInformation extends StatelessWidget {
   const BuzzInformation({
@@ -50,28 +51,10 @@ class BuzzInformation extends StatelessWidget {
           SizedBox(
             height: 32.h,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'Event Featured ADS',
-                style: TextStyle(
-                    fontSize: 24.sp,
-                    fontFamily: AppFonts.manormafont,
-                    fontWeight: FontWeight.w700),
-              ),
-              Text(
-                'See more',
-                style: TextStyle(
-                    fontSize: 16.sp,
-                    decoration: TextDecoration.underline,
-                    decorationColor: AppColor.primaryyellow,
-                    color: AppColor.primaryyellow),
-              ),
-            ],
-          ),
+        
         ],
       ),
     );
   }
 }
+
