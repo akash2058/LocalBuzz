@@ -9,8 +9,26 @@ import 'package:localbuzz/view/screens/search/search.dart';
 
 class AppController extends ChangeNotifier {
   ScrollController scrollController = ScrollController();
-  int currenttab = 0;
   int currentpage = 0;
+  void startAutoPageChange() {
+    Timer.periodic(const Duration(seconds: 3), (Timer timer) {
+      if (currentpage < sliderlist.length - 1) {
+        currentpage++;
+      } else {
+        currentpage = 0;
+      }
+      if (pageController.hasClients) {
+        pageController.animateToPage(
+          currentpage,
+          duration: Duration(milliseconds: 500),
+          curve: Curves.easeInOut,
+        );
+      }
+    });
+  }
+
+  int currenttab = 0;
+
   List<Widget> screens = [
     HomeScreen(),
     SearchScreen(),
@@ -41,6 +59,7 @@ class AppController extends ChangeNotifier {
     AppImages.imgthree,
     AppImages.imgfour,
     AppImages.imgfive,
-    AppImages.imgsix
+    AppImages.imgsix,
+    AppImages.imgseven
   ];
 }

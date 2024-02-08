@@ -10,24 +10,23 @@ class NewUpComingList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 544.h,
-      width: MediaQuery.sizeOf(context).width,
-      child: ListView.builder(
-          shrinkWrap: true,
-          scrollDirection: Axis.horizontal,
-          padding: EdgeInsets.all(16.h),
-          itemCount: 5,
-          itemBuilder: (context, index) {
-            return CustomContainer(
-                date: '04 Jan, 2024',
-                day: 'Festival of Speed',
-                events: 'Local Event Promotions',
-                description:
-                    'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed qu adipisci velit, sed qu',
-                image: AppImages.picthree,
-                ontap: () {});
-          }),
+    return SingleChildScrollView(
+      physics: const BouncingScrollPhysics(parent: BouncingScrollPhysics()),
+      scrollDirection: Axis.horizontal,
+      child: Padding(
+        padding: EdgeInsets.only(left: 18.w, right: 15.w, top: 20.h),
+        child: Row(
+            children: List.generate(
+                5,
+                (index) => CustomContainer(
+                    date: '04 Jan, 2024',
+                    day: 'Festival of Speed',
+                    events: 'Local Event Promotions',
+                    description:
+                        'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed qu adipisci velit, sed qu',
+                    image: AppImages.picthree,
+                    ontap: () {}))),
+      ),
     );
   }
 }

@@ -17,19 +17,23 @@ class DirectoryList extends StatelessWidget {
         return SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Padding(
-            padding: EdgeInsets.all(18.h),
+            padding: EdgeInsets.symmetric(horizontal: 9.25.w),
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: List.generate(
                   state.imglist.length,
-                  (index) => CustomCard(
-                      image: state.imglist[index],
-                      date: '27 FEB, 2020',
-                      location: 'Sir Winston',
-                      country: 'Churchill Park',
-                      description:
-                          'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id esExcepteur , ',
-                      onpress: () {},
-                      title: state.titlelist[index])),
+                  (index) => Padding(
+                        padding: EdgeInsets.only(left: 3.5.w),
+                        child: CustomCard(
+                            image: state.imglist[index],
+                            date: '27 FEB, 2020',
+                            location: 'Sir Winston',
+                            country: 'Churchill Park',
+                            description:
+                                'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id esExcepteur , ',
+                            onpress: () {},
+                            title: state.titlelist[index]),
+                      )),
             ),
           ),
         );

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:localbuzz/view/constraints/appcolor.dart';
-import 'package:localbuzz/view/constraints/appfonts.dart';
+
 
 class DirectoryTitle extends StatelessWidget {
   const DirectoryTitle({
@@ -11,23 +12,26 @@ class DirectoryTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(18.h),
+      padding: EdgeInsets.only(
+          left: 17.5.w, top: 32.h, right: 17.25.w, bottom: 20.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             'Directory Featured ADS',
-            style: TextStyle(
+            style: GoogleFonts.manrope(
                 fontSize: 24.sp,
-                fontFamily: AppFonts.manormafont,
-                fontWeight: FontWeight.w700),
+                fontWeight: FontWeight.w700,
+                color: AppColor.primarylightblack),
           ),
           Column(
             children: [
               Text(
                 'See more',
-                style:
-                    TextStyle(fontSize: 16.sp, color: AppColor.primaryyellow),
+                style: GoogleFonts.manrope(
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w400,
+                    color: AppColor.primaryyellow),
               ),
               Container(
                 height: 1,

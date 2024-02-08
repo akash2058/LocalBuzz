@@ -11,9 +11,10 @@ class NewUpCoimingEventList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      physics: const BouncingScrollPhysics(),
       scrollDirection: Axis.horizontal,
       child: Padding(
-        padding: EdgeInsets.all(16.h),
+        padding: EdgeInsets.only(left: 17.5.w, right: 17.5.w),
         child: Row(
             children: List.generate(
                 5,

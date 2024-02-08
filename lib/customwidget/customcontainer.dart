@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:localbuzz/customwidget/custombutton.dart';
 import 'package:localbuzz/view/constraints/appcolor.dart';
 import 'package:localbuzz/view/constraints/appfonts.dart';
-import 'package:localbuzz/view/constraints/appicons.dart';
 
+// ignore: must_be_immutable
 class CustomContainer extends StatelessWidget {
   String date;
   String day;
@@ -26,23 +27,17 @@ class CustomContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.sizeOf(context).width,
+      width: 372.w,
       child: Card(
         child: Padding(
-          padding: EdgeInsets.all(18.h),
+          padding: EdgeInsets.only(left: 18.w, right: 15.w, top: 20.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                height: 223.h,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(24.r),
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: AssetImage(image),
-                  ),
-                ),
+              Card(
+                child: ClipRRect(
+                    borderRadius: BorderRadius.circular(24.r),
+                    child: Image.asset(image)),
               ),
               SizedBox(
                 height: 18.h,
@@ -53,26 +48,23 @@ class CustomContainer extends StatelessWidget {
                 children: [
                   Text(
                     date,
-                    style: TextStyle(
-                      fontSize: 14.h,
-                      fontFamily: AppFonts.manormafont,
-                      fontWeight: FontWeight.w400,
-                    ),
+                    style: GoogleFonts.manrope(
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w400,
+                        color: AppColor.lightblack),
                   ),
                   Column(
                     children: [
                       Text(
                         events,
-                        style: TextStyle(
-                          fontSize: 14.h,
-                          fontFamily: AppFonts.manormafont,
-                          fontWeight: FontWeight.bold,
-                          color: AppColor.primaryyellow,
-                        ),
+                        style: GoogleFonts.manrope(
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w400,
+                            color: AppColor.primaryyellow),
                       ),
                       Container(
-                        height: 1,
-                        width: 154.w,
+                        height: 1.h,
+                        width: 175.w,
                         color: AppColor.primaryyellow,
                       ),
                     ],
@@ -84,11 +76,10 @@ class CustomContainer extends StatelessWidget {
               ),
               Text(
                 day,
-                style: TextStyle(
-                  fontSize: 20.sp,
-                  fontFamily: AppFonts.manormafont,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: GoogleFonts.manrope(
+                    fontSize: 20.sp,
+                    fontWeight: FontWeight.w700,
+                    color: AppColor.primarylightblack),
               ),
               SizedBox(
                 height: 18.h,
@@ -97,11 +88,10 @@ class CustomContainer extends StatelessWidget {
                 width: 340.w,
                 child: Text(
                   description,
-                  style: TextStyle(
-                    fontSize: 16.h,
-                    fontFamily: AppFonts.manormafont,
-                    fontWeight: FontWeight.w400,
-                  ),
+                  style: GoogleFonts.manrope(
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w400,
+                      color: AppColor.lightblack),
                 ),
               ),
               SizedBox(
@@ -112,6 +102,9 @@ class CustomContainer extends StatelessWidget {
                 textcolor: AppColor.primarywhite,
                 title: 'Readmore',
                 ontap: ontap,
+              ),
+              SizedBox(
+                height: 18.h,
               ),
             ],
           ),

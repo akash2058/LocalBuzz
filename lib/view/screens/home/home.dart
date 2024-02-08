@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:localbuzz/controller/appcontroller.dart';
-import 'package:localbuzz/customwidget/custombussinesscard.dart';
-import 'package:localbuzz/customwidget/customcontainer.dart';
-import 'package:localbuzz/customwidget/custominformcard.dart';
 import 'package:localbuzz/view/constraints/appcolor.dart';
-import 'package:localbuzz/view/constraints/appfonts.dart';
-import 'package:localbuzz/view/constraints/appicons.dart';
 import 'package:localbuzz/view/screens/home/components/advetisement.dart';
 import 'package:localbuzz/view/screens/home/components/bussinesslist.dart';
 import 'package:localbuzz/view/screens/home/components/bussinesstitle.dart';
@@ -36,14 +31,13 @@ class HomeScreen extends StatelessWidget {
     return Consumer<AppController>(
       builder: (context, state, child) {
         return Scaffold(
+          backgroundColor: AppColor.backgroudcolor,
           floatingActionButton: CustomButton(
               backgroundcolor: AppColor.primaryyellow,
               textcolor: AppColor.primarywhite,
               title: 'POST ADS',
               ontap: () {}),
           body: SingleChildScrollView(
-            physics:
-                const BouncingScrollPhysics(parent: BouncingScrollPhysics()),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -57,21 +51,10 @@ class HomeScreen extends StatelessWidget {
                 const EventCard(),
                 const DirectoryTitle(),
                 const DirectoryList(),
-                const Divider(
-                  indent: 25,
-                  endIndent: 25,
-                ),
-                SizedBox(
-                  height: 37.h,
-                ),
-                const AdvertisementCard(),
                 SizedBox(
                   height: 32.h,
                 ),
-                const Divider(
-                  indent: 25,
-                  endIndent: 25,
-                ),
+                const AdvertisementCard(),
                 SizedBox(
                   height: 32.h,
                 ),
@@ -79,37 +62,13 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(
                   height: 32.h,
                 ),
-                const Divider(
-                  indent: 25,
-                  endIndent: 25,
-                ),
-                SizedBox(
-                  height: 32.h,
-                ),
                 const BussinessTitle(),
-                SizedBox(
-                  height: 32.h,
-                ),
                 const BussinessList(),
-                SizedBox(
-                  height: 32.h,
-                ),
-                const Divider(
-                  indent: 25,
-                  endIndent: 25,
-                ),
                 SizedBox(
                   height: 32.h,
                 ),
                 const UpComingEventTitle(),
                 const UpcomingEventList(),
-                SizedBox(
-                  height: 32.h,
-                ),
-                const Divider(
-                  indent: 25,
-                  endIndent: 25,
-                ),
                 SizedBox(
                   height: 32.h,
                 ),

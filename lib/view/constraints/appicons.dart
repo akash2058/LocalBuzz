@@ -11,16 +11,18 @@ class AppImages {
   static const slidertwo = 'assets/sliderimgtwo.jpg';
   static const sliderthree = 'assets/sliderimgthree.jpg';
   static const directoryimgone = 'assets/directoryimg.jpg';
-  static const directoryimgtwo = 'assets/directimgtwo.jpg';
+  static const directoryimgtwo = 'assets/directoryimgtwo.jpg';
   static const eventimg = 'assets/eventsimg.jpg';
   static const imgone = 'assets/imgone.png';
   static const imgtwo = 'assets/imgtwo.png';
   static const imgthree = 'assets/imgthree.png';
   static const imgfour = 'assets/imgfour.png';
-  static const imgfive = 'assets/imgfive.png';
-  static const imgsix = 'assets/imgsix.png';
+  static const imgfive = 'assets/imgfive.jpg';
+  static const imgsix = 'assets/imgsix.jpg';
+  static const imgseven = 'assets/imgseven.jpeg';
+  static const adback = 'assets/adback.jpg';
   static const picone = 'assets/picone.jpg';
   static const pictwo = 'assets/pictwo.jpg';
-    static const picthree = 'assets/picthree.jpg';
-
+  static const picthree = 'assets/picthree.jpg';
+  static const headerimg = 'assets/headerimg.jpg';
 }

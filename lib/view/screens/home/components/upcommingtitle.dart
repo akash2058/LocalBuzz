@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:localbuzz/components/divider.dart';
 import 'package:localbuzz/view/constraints/appcolor.dart';
 import 'package:localbuzz/view/constraints/appfonts.dart';
 
@@ -11,26 +13,32 @@ class UpComingEventTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(16.h),
+      padding: EdgeInsets.only(left: 17.5.w, right: 17.5.w),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          CustomDivider(),
+          SizedBox(
+            height: 32.h,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 'Upcoming Events',
-                style: TextStyle(
+                style: GoogleFonts.manrope(
                     fontSize: 24.sp,
-                    fontFamily: AppFonts.manormafont,
-                    fontWeight: FontWeight.w700),
+                    fontWeight: FontWeight.w700,
+                    color: AppColor.primarylightblack),
               ),
               Column(
                 children: [
                   Text(
                     'See more',
-                    style: TextStyle(
-                        fontSize: 16.sp, color: AppColor.primaryyellow),
+                    style: GoogleFonts.manrope(
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w400,
+                        color: AppColor.primaryyellow),
                   ),
                   Container(
                     height: 1,
@@ -45,33 +53,37 @@ class UpComingEventTitle extends StatelessWidget {
             height: 20.h,
           ),
           Container(
-            height: 44.h,
-            width: 274.w,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(7.r),
                 border: Border.all(color: AppColor.primaryyellow)),
             child: Padding(
-              padding: EdgeInsets.only(
-                  top: 11.h, bottom: 11.h, left: 20.h, right: 20.h),
+              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
               child: Row(
+                mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     'Upcomming Events Calendar',
-                    style: TextStyle(
-                        fontFamily: AppFonts.manormafont,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16.h,
+                    style: GoogleFonts.manrope(
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w400,
                         color: AppColor.primaryyellow),
                   ),
+                  SizedBox(
+                    width: 10.w,
+                  ),
                   Icon(
-                    Icons.calendar_month,
+                    Icons.calendar_month_outlined,
                     color: AppColor.primaryyellow,
+                    size: 24.h,
                   )
                 ],
               ),
             ),
-          )
+          ),
+          SizedBox(
+            height: 16.h,
+          ),
         ],
       ),
     );

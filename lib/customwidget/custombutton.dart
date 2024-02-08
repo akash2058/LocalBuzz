@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:localbuzz/view/constraints/appcolor.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:localbuzz/view/constraints/appfonts.dart';
 
+// ignore: must_be_immutable
 class CustomButton extends StatelessWidget {
   String title;
   VoidCallback ontap;
@@ -17,21 +18,13 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 52.h,
-      width: 138.w,
-      child: ElevatedButton(
-          style: ElevatedButton.styleFrom(backgroundColor: backgroundcolor),
-          onPressed: ontap,
-          child: Text(
-            title,
-            style: TextStyle(
-              fontSize: 16.h,
-              fontWeight: FontWeight.w700,
-              color: textcolor,
-              fontFamily: AppFonts.manormafont,
-            ),
-          )),
-    );
+    return ElevatedButton(
+        style: ElevatedButton.styleFrom(backgroundColor: backgroundcolor),
+        onPressed: ontap,
+        child: Text(title,
+            style: GoogleFonts.manrope(
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w700,
+                color: textcolor)));
   }
 }

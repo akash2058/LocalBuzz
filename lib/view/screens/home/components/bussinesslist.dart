@@ -13,22 +13,21 @@ class BussinessList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<AppController>(
       builder: (context, state, child) {
-        return SizedBox(
-          height: 505.h,
-          width: MediaQuery.sizeOf(context).width,
-          child: ListView.builder(
-              padding: EdgeInsets.all(16.h),
-              scrollDirection: Axis.horizontal,
-              shrinkWrap: true,
-              itemCount: state.imglist.length,
-              itemBuilder: (context, index) {
-                return BussinessCard(
-                  title: 'Lac La Biche Massage Therapy ',
-                  img: state.imglist[index],
-                  description:
-                      'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed qu adipisci velit, sed qu',
-                );
-              }),
+        return SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+              children: List.generate(
+            state.imglist.length,
+            (index) => Padding(
+              padding: EdgeInsets.only(left: 3.5.w),
+              child: BussinessCard(
+                title: 'Lac La Biche Massage Therapy ',
+                img: state.imglist[index],
+                description:
+                    'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed qu adipisci velit, sed qu',
+              ),
+            ),
+          )),
         );
       },
     );

@@ -71,7 +71,7 @@ class _ItemListState extends State<ItemList> {
     return Consumer<AppController>(
       builder: (context, img, child) {
         return SizedBox(
-          height: 110.h,
+          height: 101.h,
           width: MediaQuery.sizeOf(context).width,
           child: ListView.builder(
             reverse: true,
@@ -85,19 +85,24 @@ class _ItemListState extends State<ItemList> {
             itemBuilder: (context, index) {
               // Use % to cycle through items
               final realIndex = index % img.imges.length;
-
-              return Padding(
-                padding: EdgeInsets.only(left: 10.h),
-                child: Container(
-                  height: 100.h,
-                  width: 100.w,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    image: DecorationImage(
-                      image: AssetImage(img.imges[realIndex]),
+              return Row(
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(5.sp),
+                    width: 100.w,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: AppColor.primaryyellow),
+                      borderRadius: BorderRadius.circular(20.r),
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage(img.imges[realIndex]),
+                      ),
                     ),
                   ),
-                ),
+                  SizedBox(
+                    width: 30.w,
+                  )
+                ],
               );
             },
           ),

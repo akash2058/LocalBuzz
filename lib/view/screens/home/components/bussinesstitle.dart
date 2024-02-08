@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:localbuzz/components/divider.dart';
 import 'package:localbuzz/view/constraints/appcolor.dart';
 import 'package:localbuzz/view/constraints/appfonts.dart';
 
@@ -11,31 +13,41 @@ class BussinessTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(16.h),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      padding: EdgeInsets.only(left: 17.w, right: 17.w),
+      child: Column(
         children: [
-          Text(
-            'Promote Your Business',
-            style: TextStyle(
-                fontSize: 24.sp,
-                fontFamily: AppFonts.manormafont,
-                fontWeight: FontWeight.w700),
+          const CustomDivider(),
+          SizedBox(
+            height: 32.h,
           ),
-          Column(
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'See more',
-                style:
-                    TextStyle(fontSize: 16.sp, color: AppColor.primaryyellow),
+                'Promote Your Business',
+                style: GoogleFonts.manrope(
+                    fontSize: 24.sp,
+                    fontWeight: FontWeight.w700,
+                    color: AppColor.primarylightblack),
               ),
-              Container(
-                height: 1,
-                width: 72.w,
-                color: AppColor.primaryyellow,
+              Column(
+                children: [
+                  Text(
+                    'See more',
+                    style: GoogleFonts.manrope(
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w400,
+                        color: AppColor.primaryyellow),
+                  ),
+                  Container(
+                    height: 1,
+                    width: 72.w,
+                    color: AppColor.primaryyellow,
+                  )
+                ],
               )
             ],
-          )
+          ),
         ],
       ),
     );

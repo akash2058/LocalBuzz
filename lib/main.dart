@@ -14,8 +14,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
+    var orientation = MediaQuery.of(context).orientation;
+    print(height);
+    print(width);
+    print(orientation);
     return const ScreenUtilInit(
-      designSize: Size(360, 690),
+      minTextAdapt: true,
+      ensureScreenSize: true,
+      designSize: Size(430, 932),
       child: MaterialApp(debugShowCheckedModeBanner: false, home: MainMenu()),
     );
   }

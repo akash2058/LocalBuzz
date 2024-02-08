@@ -1,16 +1,9 @@
-import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:localbuzz/controller/appcontroller.dart';
 import 'package:localbuzz/view/constraints/appcolor.dart';
-import 'package:localbuzz/view/constraints/appicons.dart';
-import 'package:provider/provider.dart';
-
-import 'dart:async';
-
-import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class HomeSlider extends StatefulWidget {
@@ -21,38 +14,20 @@ class HomeSlider extends StatefulWidget {
 }
 
 class _HomeSlider extends State<HomeSlider> {
-  late PageController _pageController;
-  int _currentPage = 0;
-
   @override
   void initState() {
+    var state = Provider.of<AppController>(context, listen: false);
     super.initState();
-    _pageController = PageController();
-    startAutoPageChange();
+    state.pageController = PageController();
+    state.startAutoPageChange();
   }
 
   @override
   void dispose() {
-    _pageController.dispose();
-    super.dispose();
-  }
+    var state = Provider.of<AppController>(context, listen: false);
+    state.pageController = PageController();
 
-  void startAutoPageChange() {
-    Timer.periodic(const Duration(seconds: 3), (Timer timer) {
-      var state = Provider.of<AppController>(context, listen: false);
-      if (_currentPage < state.sliderlist.length - 1) {
-        _currentPage++;
-      } else {
-        _currentPage = 0;
-      }
-      if (_pageController.hasClients) {
-        _pageController.animateToPage(
-          _currentPage,
-          duration: Duration(milliseconds: 500),
-          curve: Curves.easeInOut,
-        );
-      }
-    });
+    super.dispose();
   }
 
   @override
@@ -66,7 +41,7 @@ class _HomeSlider extends State<HomeSlider> {
             children: [
               ClipRRect(
                 child: PageView.builder(
-                  controller: _pageController,
+                  controller: slide.pageController,
                   itemCount: slide.sliderlist.length,
                   itemBuilder: (context, index) {
                     return SizedBox(
@@ -84,31 +59,29 @@ class _HomeSlider extends State<HomeSlider> {
                   },
                   onPageChanged: (index) {
                     setState(() {
-                      _currentPage = index;
+                      slide.currentpage = index;
                     });
                   },
                 ),
               ),
-              Positioned(
-                bottom: 10,
-                right: 170,
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: List.generate(
-                      slide.sliderlist.length,
-                      (index) => Container(
-                        margin: EdgeInsets.symmetric(horizontal: 1),
-                        height: 9.h,
-                        width: _currentPage == index ? 15 : 9,
-                        decoration: BoxDecoration(
-                          color: _currentPage == index
-                              ? AppColor.primaryyellow
-                              : AppColor.primarywhite,
-                          borderRadius: BorderRadius.circular(
-                            _currentPage == index ? 10.0 : 5,
-                          ),
+              Positioned.fill(
+                top: 220.h,
+                bottom: 30.h,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: List.generate(
+                    slide.sliderlist.length,
+                    (index) => Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 1),
+                      height: 9.h,
+                      width: slide.currentpage == index ? 18.w : 9.w,
+                      decoration: BoxDecoration(
+                        color: slide.currentpage == index
+                            ? AppColor.primaryyellow
+                            : AppColor.primarywhite,
+                        borderRadius: BorderRadius.circular(
+                          slide.currentpage == index ? 10.0 : 5,
                         ),
                       ),
                     ),
