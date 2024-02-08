@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:localbuzz/components/divider.dart';
 import 'package:localbuzz/view/constraints/appcolor.dart';
-import 'package:localbuzz/view/constraints/appfonts.dart';
 
 class BuzzInformation extends StatelessWidget {
   const BuzzInformation({

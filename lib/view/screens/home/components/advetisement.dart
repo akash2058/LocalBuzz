@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:localbuzz/components/divider.dart';
 import 'package:localbuzz/customwidget/custombutton.dart';
 import 'package:localbuzz/view/constraints/appcolor.dart';
-import 'package:localbuzz/view/constraints/appfonts.dart';
 import 'package:localbuzz/view/constraints/appicons.dart';
 
 class AdvertisementCard extends StatelessWidget {
