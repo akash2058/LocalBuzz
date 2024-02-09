@@ -35,7 +35,7 @@ class CustomCard extends StatelessWidget {
       child: Column(
         children: [
           Card(
-            elevation: 0.5,
+            elevation: 5,
             color: AppColor.primarywhite,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(24.r)),

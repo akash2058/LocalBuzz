@@ -64,15 +64,15 @@ class HomeScreenHead extends StatelessWidget {
                       child: SvgPicture.asset(
                         // ignore: deprecated_member_use
                         color: AppColor.primarywhite,
-                        width: 24.w,
+                        width: 18.w,
                         AppImages.searchicon,
-                        height: 24.h,
+                        height: 18.h,
                       ),
                     ),
                     contentPadding:
                         EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
                     hintStyle: GoogleFonts.manrope(
-                        fontSize: 14.sp,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.w400,
                         color: AppColor.primarywhite),
                     prefixIconConstraints: const BoxConstraints(),

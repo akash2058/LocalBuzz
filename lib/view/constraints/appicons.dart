@@ -25,4 +25,5 @@ class AppImages {
   static const pictwo = 'assets/pictwo.jpg';
   static const picthree = 'assets/picthree.jpg';
   static const headerimg = 'assets/headerimg.jpg';
+  static const splashlogo = 'assets/splashlogo.jpg';
 }

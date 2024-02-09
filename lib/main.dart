@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:localbuzz/provider/appproviders.dart';
 import 'package:localbuzz/view/mainmenu/main_menu.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:localbuzz/view/splashscreen/splashscreen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       ensureScreenSize: true,
       designSize: Size(430, 932),
-      child: MaterialApp(debugShowCheckedModeBanner: false, home: MainMenu()),
+      child:
+          MaterialApp(debugShowCheckedModeBanner: false, home: SplashScreen()),
     );
   }
 }

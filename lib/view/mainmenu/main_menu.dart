@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:localbuzz/controller/appcontroller.dart';
 import 'package:localbuzz/view/constraints/appcolor.dart';
-import 'package:localbuzz/view/constraints/appfonts.dart';
 import 'package:localbuzz/view/constraints/appicons.dart';
 import 'package:provider/provider.dart';
 
@@ -22,13 +22,12 @@ class _MainMenuState extends State<MainMenu> {
         return SafeArea(
           child: Scaffold(
               bottomNavigationBar: BottomAppBar(
-                height: 98.h,
+                height: 93.h,
                 child: Padding(
-                  padding: EdgeInsets.only(
-                      left: 16.w, right: 15.w, top: 6.52.w, bottom: 12.44.w),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 15.w,
+                  ),
                   child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       GestureDetector(
@@ -51,17 +50,14 @@ class _MainMenuState extends State<MainMenu> {
                             SizedBox(
                               height: 4.h,
                             ),
-                            Text(
-                              'Home',
-                              style: TextStyle(
-                                fontSize: 14.h,
-                                fontFamily: AppFonts.manormafont,
-                                fontWeight: FontWeight.w600,
-                                color: menu.currenttab == 0
-                                    ? AppColor.primaryyellow
-                                    : AppColor.primarygrey,
-                              ),
-                            )
+                            Text('Home',
+                                style: GoogleFonts.manrope(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 14.sp,
+                                  color: menu.currenttab == 0
+                                      ? AppColor.primaryyellow
+                                      : AppColor.primarygrey,
+                                ))
                           ],
                         ),
                       ),
@@ -86,17 +82,14 @@ class _MainMenuState extends State<MainMenu> {
                             SizedBox(
                               height: 4.h,
                             ),
-                            Text(
-                              'Search',
-                              style: TextStyle(
-                                fontSize: 14.h,
-                                fontFamily: AppFonts.manormafont,
-                                fontWeight: FontWeight.w600,
-                                color: menu.currenttab == 1
-                                    ? AppColor.primaryyellow
-                                    : AppColor.primarygrey,
-                              ),
-                            )
+                            Text('Search',
+                                style: GoogleFonts.manrope(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 14.sp,
+                                  color: menu.currenttab == 1
+                                      ? AppColor.primaryyellow
+                                      : AppColor.primarygrey,
+                                ))
                           ],
                         ),
                       ),
@@ -134,17 +127,14 @@ class _MainMenuState extends State<MainMenu> {
                             SizedBox(
                               height: 4.h,
                             ),
-                            Text(
-                              'Message',
-                              style: TextStyle(
-                                fontSize: 14.h,
-                                fontFamily: AppFonts.manormafont,
-                                fontWeight: FontWeight.w600,
-                                color: menu.currenttab == 2
-                                    ? AppColor.primaryyellow
-                                    : AppColor.primarygrey,
-                              ),
-                            )
+                            Text('Message',
+                                style: GoogleFonts.manrope(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 14.sp,
+                                  color: menu.currenttab == 2
+                                      ? AppColor.primaryyellow
+                                      : AppColor.primarygrey,
+                                ))
                           ],
                         ),
                       ),
@@ -168,17 +158,14 @@ class _MainMenuState extends State<MainMenu> {
                             SizedBox(
                               height: 4.h,
                             ),
-                            Text(
-                              'Profile',
-                              style: TextStyle(
-                                fontSize: 14.h,
-                                fontFamily: AppFonts.manormafont,
-                                fontWeight: FontWeight.w600,
-                                color: menu.currenttab == 3
-                                    ? AppColor.primaryyellow
-                                    : AppColor.primarygrey,
-                              ),
-                            )
+                            Text('Profile',
+                                style: GoogleFonts.manrope(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 14.sp,
+                                  color: menu.currenttab == 3
+                                      ? AppColor.primaryyellow
+                                      : AppColor.primarygrey,
+                                ))
                           ],
                         ),
                       ),

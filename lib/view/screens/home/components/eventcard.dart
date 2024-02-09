@@ -19,7 +19,7 @@ class EventCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Card(
-            elevation: 0,
+            elevation: 5,
             color: AppColor.primarywhite,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(24.r)),
