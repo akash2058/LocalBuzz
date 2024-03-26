@@ -34,9 +34,51 @@ TextStyle get discriptionStyle {
       fontSize: 16.sp, fontWeight: FontWeight.w400, color: AppColor.lightblack);
 }
 
+TextStyle get hintstyle {
+  return GoogleFonts.manrope(
+      fontSize: 16.sp,
+      fontWeight: FontWeight.w300,
+      color: AppColor.primarywhite);
+}
+
 TextStyle get eventitlestyle {
   return GoogleFonts.manrope(
       fontSize: 16.sp,
       fontWeight: FontWeight.w700,
       color: AppColor.primarylightblack);
+}
+
+TextStyle get tilestyle {
+  return GoogleFonts.manrope(
+      fontSize: 18.sp,
+      fontWeight: FontWeight.w400,
+      color: AppColor.primarylightblack);
+}
+
+TextStyle get screentitlestyle {
+  return GoogleFonts.manrope(
+      fontSize: 20.sp,
+      fontWeight: FontWeight.w700,
+      color: AppColor.primarylightblack);
+}
+
+TextStyle get durationstyle {
+  return GoogleFonts.manrope(
+      fontSize: 16.sp,
+      fontWeight: FontWeight.w700,
+      color: AppColor.primaryyellow);
+}
+
+TextStyle get durationtextstyle {
+  return GoogleFonts.manrope(
+      fontSize: 18.sp,
+      fontWeight: FontWeight.w500,
+      color: AppColor.primarywhite);
+}
+
+TextStyle get subtitlestyle {
+  return GoogleFonts.manrope(
+      fontWeight: FontWeight.w400,
+      fontSize: 16.sp,
+      color: AppColor.primarygrey);
 }

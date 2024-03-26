@@ -22,14 +22,6 @@ class _HomeSlider extends State<HomeSlider> {
   }
 
   @override
-  void dispose() {
-    var state = Provider.of<HomeProvider>(context, listen: false);
-    state.pageController = PageController();
-
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Consumer<HomeProvider>(
       builder: (context, slide, child) {

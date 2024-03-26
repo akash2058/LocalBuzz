@@ -17,7 +17,7 @@ class HomeProvider extends ChangeNotifier {
         pageController.animateToPage(
           currentpage,
           duration: Duration(milliseconds: 500),
-          curve: Curves.easeInOut,
+          curve: Curves.ease,
         );
       }
     });

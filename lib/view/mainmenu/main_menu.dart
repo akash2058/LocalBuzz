@@ -20,6 +20,20 @@ class _MainMenuState extends State<MainMenu> {
       builder: (context, menu, child) {
         return SafeArea(
           child: Scaffold(
+              floatingActionButtonLocation:
+                  FloatingActionButtonLocation.centerDocked,
+              floatingActionButton: FloatingActionButton(
+                backgroundColor: AppColor.primaryyellow,
+                mini: true,
+                elevation: 0,
+                shape: const CircleBorder(),
+                onPressed: () {},
+                child: Icon(
+                  Icons.add,
+                  size: 24.h,
+                  color: AppColor.primarywhite,
+                ),
+              ),
               bottomNavigationBar: BottomAppBar(
                 height: 93.h,
                 child: Padding(
@@ -68,20 +82,33 @@ class _MainMenuState extends State<MainMenu> {
                         },
                         child: Column(
                           children: [
-                            // ignore: deprecated_member_use
-                            Image.asset(
-                              AppImages.searchicon,
-                              height: 18.h,
-                              width: 18.w,
-                              // ignore: deprecated_member_use
-                              color: menu.currenttab == 1
-                                  ? AppColor.primaryyellow
-                                  : AppColor.primarygrey,
+                            Stack(
+                              alignment: Alignment.topRight,
+                              children: [
+                                Positioned.fill(
+                                  top: -12.h,
+                                  left: 10.w,
+                                  child: Icon(
+                                    Icons.circle,
+                                    size: 10.h,
+                                    color: AppColor.primaryyellow,
+                                  ),
+                                ),
+                                Image.asset(
+                                  AppImages.chat,
+                                  height: 18.h,
+                                  width: 18.w,
+                                  // ignore: deprecated_member_use
+                                  color: menu.currenttab == 1
+                                      ? AppColor.primaryyellow
+                                      : AppColor.primarygrey,
+                                ),
+                              ],
                             ),
                             SizedBox(
                               height: 4.h,
                             ),
-                            Text('Search',
+                            Text('Message',
                                 style: GoogleFonts.manrope(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 14.sp,
@@ -100,33 +127,19 @@ class _MainMenuState extends State<MainMenu> {
                         },
                         child: Column(
                           children: [
-                            Stack(
-                              alignment: Alignment.topRight,
-                              children: [
-                                Positioned.fill(
-                                  top: -12.h,
-                                  left: 10.w,
-                                  child: Icon(
-                                    Icons.circle,
-                                    size: 10.h,
-                                    color: AppColor.primaryyellow,
-                                  ),
-                                ),
-                                Image.asset(
-                                  AppImages.chat,
-                                  height: 18.h,
-                                  width: 18.w,
-                                  // ignore: deprecated_member_use
-                                  color: menu.currenttab == 2
-                                      ? AppColor.primaryyellow
-                                      : AppColor.primarygrey,
-                                ),
-                              ],
+                            Image.asset(
+                              AppImages.cart,
+                              height: 18.h,
+                              width: 18.w,
+                              // ignore: deprecated_member_use
+                              color: menu.currenttab == 2
+                                  ? AppColor.primaryyellow
+                                  : AppColor.primarygrey,
                             ),
                             SizedBox(
                               height: 4.h,
                             ),
-                            Text('Message',
+                            Text('My Cart',
                                 style: GoogleFonts.manrope(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 14.sp,

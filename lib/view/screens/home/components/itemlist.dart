@@ -15,9 +15,19 @@ class ItemList extends StatefulWidget {
 
 class _ItemListState extends State<ItemList> {
   @override
+  
   void initState() {
-    var state = Provider.of<HomeProvider>(context, listen: false);
     super.initState();
+
+    // Move the initialization code to didChangeDependencies() method
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+
+    // Access the context here to initialize your animation
+    var state = Provider.of<HomeProvider>(context, listen: false);
 
     // Delay before starting the animation
     Future.delayed(Duration(milliseconds: 200), () {
@@ -57,13 +67,6 @@ class _ItemListState extends State<ItemList> {
         _startScrollAnimation(state);
       },
     );
-  }
-
-  @override
-  void dispose() {
-    var state = Provider.of<HomeProvider>(context, listen: false);
-    state.scrollController.dispose();
-    super.dispose();
   }
 
   @override

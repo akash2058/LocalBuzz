@@ -1,6 +1,7 @@
 class AppImages {
   static const homeicon = 'assets/home.png';
-  static const searchicon = 'assets/search.svg';
+  static const searchicon = 'assets/search.png';
+  static const menu = 'assets/menu.png';
   static const chat = 'assets/chat.png';
   static const profile = 'assets/profile.png';
   static const beelogo = 'assets/beelogo.png';
@@ -28,4 +29,5 @@ class AppImages {
   static const calendar = 'assets/splashlogo.jpg';
   static const chathead = 'assets/adback.jpg';
   static const cart = 'assets/cart.png';
+  static const user = 'assets/user.png';
 }
