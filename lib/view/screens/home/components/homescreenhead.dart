@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:localbuzz/view/constraints/appcolor.dart';
 import 'package:localbuzz/view/constraints/appicons.dart';
@@ -34,10 +33,9 @@ class HomeScreenHead extends StatelessWidget {
                   Row(
                     children: [],
                   ),
-                  SvgPicture.asset(
-                    AppImages.drawer,
-                    height: 44.h,
-                    width: 44.w,
+                  Icon(
+                    Icons.search,
+                    size: 18.h,
                   )
                 ],
               ),
@@ -59,16 +57,13 @@ class HomeScreenHead extends StatelessWidget {
                   decoration: InputDecoration(
                     hintText: 'What are you looking for?...',
                     prefixIcon: Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 16.w, vertical: 10.h),
-                      child: SvgPicture.asset(
-                        // ignore: deprecated_member_use
-                        color: AppColor.primarywhite,
-                        width: 18.w,
-                        AppImages.searchicon,
-                        height: 18.h,
-                      ),
-                    ),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 16.w, vertical: 10.h),
+                        child: Icon(
+                          Icons.search,
+                          size: 18.h,
+                          color: AppColor.primarywhite,
+                        )),
                     contentPadding:
                         EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
                     hintStyle: GoogleFonts.manrope(

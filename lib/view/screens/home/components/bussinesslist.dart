@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:localbuzz/controller/appcontroller.dart';
 import 'package:localbuzz/customwidget/custombussinesscard.dart';
+import 'package:localbuzz/view/screens/home/homeprovider.dart';
 import 'package:provider/provider.dart';
 
 class BussinessList extends StatelessWidget {
@@ -11,7 +12,7 @@ class BussinessList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<AppController>(
+    return Consumer<HomeProvider>(
       builder: (context, state, child) {
         return SingleChildScrollView(
           scrollDirection: Axis.horizontal,

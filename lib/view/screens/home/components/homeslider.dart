@@ -1,9 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:localbuzz/controller/appcontroller.dart';
 import 'package:localbuzz/view/constraints/appcolor.dart';
+import 'package:localbuzz/view/screens/home/homeprovider.dart';
 import 'package:provider/provider.dart';
 
 class HomeSlider extends StatefulWidget {
@@ -16,7 +15,7 @@ class HomeSlider extends StatefulWidget {
 class _HomeSlider extends State<HomeSlider> {
   @override
   void initState() {
-    var state = Provider.of<AppController>(context, listen: false);
+    var state = Provider.of<HomeProvider>(context, listen: false);
     super.initState();
     state.pageController = PageController();
     state.startAutoPageChange();
@@ -24,7 +23,7 @@ class _HomeSlider extends State<HomeSlider> {
 
   @override
   void dispose() {
-    var state = Provider.of<AppController>(context, listen: false);
+    var state = Provider.of<HomeProvider>(context, listen: false);
     state.pageController = PageController();
 
     super.dispose();
@@ -32,7 +31,7 @@ class _HomeSlider extends State<HomeSlider> {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<AppController>(
+    return Consumer<HomeProvider>(
       builder: (context, slide, child) {
         return SizedBox(
           height: 263.h,

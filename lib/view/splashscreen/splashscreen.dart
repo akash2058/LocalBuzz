@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:localbuzz/view/constraints/appicons.dart';
-import 'package:localbuzz/view/constraints/custom_pagetransition.dart';
+import 'package:localbuzz/customwidget/custom_pagetransition.dart';
 import 'package:localbuzz/view/mainmenu/main_menu.dart';
 
 class SplashScreen extends StatefulWidget {

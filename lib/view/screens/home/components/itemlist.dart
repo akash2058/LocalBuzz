@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:localbuzz/controller/appcontroller.dart';
 import 'package:localbuzz/view/constraints/appcolor.dart';
+import 'package:localbuzz/view/screens/home/homeprovider.dart';
 import 'package:provider/provider.dart';
 
 class ItemList extends StatefulWidget {
@@ -16,7 +16,7 @@ class ItemList extends StatefulWidget {
 class _ItemListState extends State<ItemList> {
   @override
   void initState() {
-    var state = Provider.of<AppController>(context, listen: false);
+    var state = Provider.of<HomeProvider>(context, listen: false);
     super.initState();
 
     // Delay before starting the animation
@@ -25,7 +25,7 @@ class _ItemListState extends State<ItemList> {
     });
   }
 
-  void _startScrollAnimation(AppController state) {
+  void _startScrollAnimation(HomeProvider state) {
     // Animate scroll to the max extent
     state.scrollController.animateTo(
       state.scrollController.position.maxScrollExtent,
@@ -42,7 +42,7 @@ class _ItemListState extends State<ItemList> {
     );
   }
 
-  void _reverseScroll(AppController state) {
+  void _reverseScroll(HomeProvider state) {
     // Animate scroll to the min extent
     state.scrollController.animateTo(
       state.scrollController.position.minScrollExtent,
@@ -61,14 +61,14 @@ class _ItemListState extends State<ItemList> {
 
   @override
   void dispose() {
-    var state = Provider.of<AppController>(context, listen: false);
+    var state = Provider.of<HomeProvider>(context, listen: false);
     state.scrollController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<AppController>(
+    return Consumer<HomeProvider>(
       builder: (context, img, child) {
         return SizedBox(
           height: 101.h,

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:localbuzz/controller/appcontroller.dart';
 import 'package:localbuzz/view/constraints/appcolor.dart';
 import 'package:localbuzz/view/constraints/appicons.dart';
+import 'package:localbuzz/view/mainmenu/mainmenu_providers.dart';
 import 'package:provider/provider.dart';
 
 class MainMenu extends StatefulWidget {
@@ -17,7 +16,7 @@ class MainMenu extends StatefulWidget {
 class _MainMenuState extends State<MainMenu> {
   @override
   Widget build(BuildContext context) {
-    return Consumer<AppController>(
+    return Consumer<MainMenuProvider>(
       builder: (context, menu, child) {
         return SafeArea(
           child: Scaffold(
@@ -38,7 +37,7 @@ class _MainMenuState extends State<MainMenu> {
                         },
                         child: Column(
                           children: [
-                            SvgPicture.asset(
+                            Image.asset(
                               AppImages.homeicon,
                               height: 18.h,
                               width: 18.w,
@@ -70,7 +69,7 @@ class _MainMenuState extends State<MainMenu> {
                         child: Column(
                           children: [
                             // ignore: deprecated_member_use
-                            SvgPicture.asset(
+                            Image.asset(
                               AppImages.searchicon,
                               height: 18.h,
                               width: 18.w,
@@ -113,8 +112,8 @@ class _MainMenuState extends State<MainMenu> {
                                     color: AppColor.primaryyellow,
                                   ),
                                 ),
-                                SvgPicture.asset(
-                                  AppImages.message,
+                                Image.asset(
+                                  AppImages.chat,
                                   height: 18.h,
                                   width: 18.w,
                                   // ignore: deprecated_member_use
@@ -146,7 +145,7 @@ class _MainMenuState extends State<MainMenu> {
                         },
                         child: Column(
                           children: [
-                            SvgPicture.asset(
+                            Image.asset(
                               AppImages.profile,
                               height: 18.h,
                               width: 18.w,

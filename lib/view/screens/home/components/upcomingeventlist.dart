@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:localbuzz/view/constraints/appicons.dart';
+import 'package:localbuzz/view/screens/home/components/eventcard.dart';
 
-import '../../../../customwidget/custominformcard.dart';
 
 class UpcomingEventList extends StatelessWidget {
   const UpcomingEventList({
@@ -16,20 +16,21 @@ class UpcomingEventList extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 15.5.w),
         child: Row(
-          children: List.generate(
-              5,
-              (index) => CustomCard(
-                  date: '27 JAN, 2020',
-                  icon: Icons.location_pin,
-                  location: 'Sir Winston ',
-                  country: 'Churchill Park',
-                  time: '01:00 PM - 03:00 PM',
-                  image: AppImages.picone,
-                  description:
-                      'Matinee Movie at the Plamondon Festival Centre Theatre January 27th at 1:00. Concession will be open',
-                  onpress: () {},
-                  title: 'Leo Matinee Movie at the Plam...')),
-        ),
+            children: List.generate(
+                5,
+                (index) => Row(
+                      children: [
+                        EventCard(
+                            date: '27 FEB, 2020',
+                            img: AppImages.pictwo,
+                            location: 'Sir Winston Churchill Park',
+                            title:
+                                'Leo Matinee Movie at the Plamondon Festival Centre Theatre'),
+                        SizedBox(
+                          width: 22.w,
+                        )
+                      ],
+                    ))),
       ),
     );
   }

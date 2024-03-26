@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:localbuzz/components/divider.dart';
+import 'package:localbuzz/customwidget/customarrowbutton.dart';
 import 'package:localbuzz/view/constraints/appcolor.dart';
+import 'package:localbuzz/view/constraints/textstyle.dart';
+import 'package:localbuzz/view/screens/home/components/eventcalendar.dart';
 
 class UpComingEventTitle extends StatelessWidget {
   const UpComingEventTitle({
@@ -23,22 +25,10 @@ class UpComingEventTitle extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                'Upcoming Events',
-                style: GoogleFonts.manrope(
-                    fontSize: 24.sp,
-                    fontWeight: FontWeight.w700,
-                    color: AppColor.primarylightblack),
-              ),
+              Text('Upcoming Events', style: titleStyle),
               Column(
                 children: [
-                  Text(
-                    'See more',
-                    style: GoogleFonts.manrope(
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w400,
-                        color: AppColor.primaryyellow),
-                  ),
+                  Text('See more', style: seemorestyle),
                   Container(
                     height: 1,
                     width: 72.w,
@@ -51,34 +41,20 @@ class UpComingEventTitle extends StatelessWidget {
           SizedBox(
             height: 20.h,
           ),
-          Container(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(7.r),
-                border: Border.all(color: AppColor.primaryyellow)),
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
                 children: [
-                  Text(
-                    'Upcomming Events Calendar',
-                    style: GoogleFonts.manrope(
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w400,
-                        color: AppColor.primaryyellow),
-                  ),
+                  LeftArrowCircleButton(onTap: () {}),
                   SizedBox(
-                    width: 10.w,
+                    width: 16.w,
                   ),
-                  Icon(
-                    Icons.calendar_month_outlined,
-                    color: AppColor.primaryyellow,
-                    size: 24.h,
-                  )
+                  RightArrowCircleButton(onTap: () {}),
                 ],
               ),
-            ),
+              const EventCalendar()
+            ],
           ),
           SizedBox(
             height: 16.h,

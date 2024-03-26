@@ -1,107 +1,81 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:localbuzz/components/divider.dart';
-import 'package:localbuzz/customwidget/custombutton.dart';
-import 'package:localbuzz/view/constraints/appcolor.dart';
-import 'package:localbuzz/view/constraints/appicons.dart';
 
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:localbuzz/view/constraints/appcolor.dart';
+
+import 'package:localbuzz/view/constraints/textstyle.dart';
+
+// ignore: must_be_immutable
 class EventCard extends StatelessWidget {
-  const EventCard({
+  String img;
+  String date;
+  String location;
+  String title;
+  EventCard({
     super.key,
+    required this.date,
+    required this.img,
+    required this.location,
+    required this.title,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(left: 15.5.w, right: 18.5.w),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Card(
-            elevation: 5,
-            color: AppColor.primarywhite,
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(24.r)),
-            child: Column(
+    return Container(
+        width: 180.w,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              height: 185.h,
+              width: 180.w,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(9.83.r),
+                  image: DecorationImage(
+                      fit: BoxFit.fill, image: AssetImage(img))),
+            ),
+            SizedBox(
+              height: 12.h,
+            ),
+            Text(
+              date,
+              style: dateStyle,
+            ),
+            SizedBox(
+              height: 12.h,
+            ),
+            Stack(
+              alignment: Alignment.bottomCenter,
               children: [
-                Container(
-                  height: 223.h,
-                  width: MediaQuery.sizeOf(context).width,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(24.r),
-                      image: const DecorationImage(
-                          image: AssetImage(
-                            AppImages.eventimg,
-                          ),
-                          fit: BoxFit.cover)),
+                SizedBox(
+                  width: 180.w,
+                  child: Text(
+                    location,
+                    style: dateStyle,
+                  ),
                 ),
-                Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 9.5.w, vertical: 18.h),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            '27 FEB, 2020',
-                            style: GoogleFonts.manrope(
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.w400,
-                                color: AppColor.lightblack),
-                          ),
-                          Text(
-                            'Dallas, Texas',
-                            style: GoogleFonts.manrope(
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.w400,
-                                color: AppColor.lightblack),
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                        height: 14.h,
-                      ),
-                      Text(
-                        '3rd Annual Ladies on Ice Fishing Adventure',
-                        style: GoogleFonts.manrope(
-                            fontSize: 20.sp,
-                            fontWeight: FontWeight.w700,
-                            color: AppColor.primarylightblack),
-                      ),
-                      SizedBox(
-                        height: 18.h,
-                      ),
-                      Text(
-                        'Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae',
-                        style: GoogleFonts.manrope(
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w400,
-                            color: AppColor.lightblack),
-                      ),
-                      SizedBox(
-                        height: 18.h,
-                      ),
-                      CustomButton(
-                          backgroundcolor: AppColor.primaryyellow,
-                          textcolor: AppColor.primarywhite,
-                          title: 'ReadMore',
-                          ontap: () {}),
-                    ],
+                Positioned(
+                  left: 35.w,
+                  bottom: 2.h,
+                  child: Icon(
+                    Icons.location_on,
+                    color: AppColor.primarygrey,
+                    size: 14.h,
                   ),
                 ),
               ],
             ),
-          ),
-          SizedBox(
-            height: 32.h,
-          ),
-          CustomDivider()
-        ],
-      ),
-    );
+            SizedBox(
+              height: 12.h,
+            ),
+            SizedBox(
+              width: 180.w,
+              child: Text(
+                title,
+                style: eventitlestyle,
+              ),
+            ),
+          ],
+        ));
   }
 }

@@ -1,9 +1,8 @@
 class AppImages {
-  static const homeicon = 'assets/home.svg';
+  static const homeicon = 'assets/home.png';
   static const searchicon = 'assets/search.svg';
-  static const message = 'assets/message.svg';
-  static const profile = 'assets/profile.svg';
-  static const sliderimg = 'assets/backgroudimage.svg';
+  static const chat = 'assets/chat.png';
+  static const profile = 'assets/profile.png';
   static const beelogo = 'assets/beelogo.png';
   static const drawer = 'assets/drawerlogo.svg';
   static const line = 'assets/line.svg';
@@ -26,4 +25,7 @@ class AppImages {
   static const picthree = 'assets/picthree.jpg';
   static const headerimg = 'assets/headerimg.jpg';
   static const splashlogo = 'assets/splashlogo.jpg';
+  static const calendar = 'assets/splashlogo.jpg';
+  static const chathead = 'assets/adback.jpg';
+  static const cart = 'assets/cart.png';
 }

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:localbuzz/customwidget/customarrowbutton.dart';
 import 'package:localbuzz/view/constraints/appcolor.dart';
+import 'package:localbuzz/view/constraints/textstyle.dart';
 
 class EventFeaturedTitle extends StatelessWidget {
   const EventFeaturedTitle({
@@ -11,33 +12,46 @@ class EventFeaturedTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 17.5.w, vertical: 20.h),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      padding: EdgeInsets.symmetric(
+        horizontal: 17.5.w,
+      ),
+      child: Column(
         children: [
-          Text(
-            'Event Featured ADS',
-            style: GoogleFonts.manrope(
-                fontSize: 24.sp,
-                fontWeight: FontWeight.w700,
-                color: AppColor.primarylightblack),
-          ),
-          Column(
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                'See more',
-                style: GoogleFonts.manrope(
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w400,
-                    color: AppColor.primaryyellow),
+              Text('Event Featured ADS', style: titleStyle),
+              Column(
+                children: [
+                  Text('See more', style: seemorestyle),
+                  Container(
+                    height: 1,
+                    width: 72.w,
+                    color: AppColor.primaryyellow,
+                  )
+                ],
               ),
-              Container(
-                height: 1,
-                width: 72.w,
-                color: AppColor.primaryyellow,
-              )
             ],
-          )
+          ),
+          SizedBox(
+            height: 28.h,
+          ),
+          Row(
+            children: [
+              LeftArrowCircleButton(
+                onTap: () {},
+              ),
+              SizedBox(
+                width: 16.w,
+              ),
+              RightArrowCircleButton(
+                onTap: () {},
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 28.h,
+          ),
         ],
       ),
     );
