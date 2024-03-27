@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:localbuzz/view/constraints/appcolor.dart';
 import 'package:localbuzz/view/constraints/textstyle.dart';
 
+// ignore: must_be_immutable
 class CustomExpansionTile extends StatelessWidget {
   String title;
   List<Widget> children;

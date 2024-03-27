@@ -17,7 +17,7 @@ class HomeProvider extends ChangeNotifier {
         pageController.animateToPage(
           currentpage,
           duration: Duration(milliseconds: 500),
-          curve: Curves.ease,
+          curve: Curves.easeInOut,
         );
       }
     });
@@ -49,4 +49,6 @@ class HomeProvider extends ChangeNotifier {
     AppImages.imgsix,
     AppImages.imgseven
   ];
+
+  static of(BuildContext context) {}
 }

@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:localbuzz/view/constraints/appicons.dart';
 import 'package:localbuzz/customwidget/custom_pagetransition.dart';
 import 'package:localbuzz/view/mainmenu/main_menu.dart';
@@ -21,22 +20,21 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void splashscreen() {
-    Timer(const Duration(seconds: 2), () {
+    Timer(const Duration(seconds: 3), () {
       Navigator.pushAndRemoveUntil(
-          context, CustomPageRoute(child: const MainMenu()), (route) => false);
+          context, SplashRoute(child: MainMenu()), (route) => false);
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Image.asset(
-          AppImages.splashlogo,
-          height: 101.h,
-          width: 291.w,
-        ),
-      ),
-    );
+        body: Container(
+      height: MediaQuery.sizeOf(context).height,
+      width: MediaQuery.sizeOf(context).width,
+      decoration: const BoxDecoration(
+          image: DecorationImage(
+              fit: BoxFit.cover, image: AssetImage(AppImages.splashlogo))),
+    ));
   }
 }

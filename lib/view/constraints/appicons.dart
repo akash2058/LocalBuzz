@@ -25,9 +25,17 @@ class AppImages {
   static const pictwo = 'assets/pictwo.jpg';
   static const picthree = 'assets/picthree.jpg';
   static const headerimg = 'assets/headerimg.jpg';
-  static const splashlogo = 'assets/splashlogo.jpg';
+  static const splashlogo = 'assets/splashlogo.gif';
   static const calendar = 'assets/splashlogo.jpg';
   static const chathead = 'assets/adback.jpg';
   static const cart = 'assets/cart.png';
   static const user = 'assets/user.png';
+  static const reminder = 'assets/quickactionback.png';
+  static const edit = 'assets/edit.png';
+  static const member = 'assets/members.png';
+  static const favourite = 'assets/fav.png';
+  static const help = 'assets/help.png';
+  static const logout = 'assets/logout.png';
+  static const favbackground = 'assets/favouriteimg.png';
 }
+

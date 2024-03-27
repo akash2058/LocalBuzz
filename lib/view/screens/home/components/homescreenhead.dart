@@ -2,12 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:localbuzz/components/menu_button.dart';
-import 'package:localbuzz/customwidget/customtextformfield.dart';
+import 'package:localbuzz/customwidget/customsearchfield.dart';
 import 'package:localbuzz/view/constraints/appicons.dart';
 import 'package:localbuzz/view/mainmenu/mainmenu_providers.dart';
 import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class HomeScreenHead extends StatelessWidget {
   Widget menu;
   HomeScreenHead({super.key, required this.menu});
@@ -47,6 +47,7 @@ class HomeScreenHead extends StatelessWidget {
                     prefix: Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16.w),
                       child: Image.asset(
+                        filterQuality: FilterQuality.high,
                         AppImages.searchicon,
                         height: 16.h,
                       ),

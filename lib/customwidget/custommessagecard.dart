@@ -5,6 +5,7 @@ import 'package:localbuzz/view/constraints/textstyle.dart';
 
 import '../view/screens/chat/components/userprofileimageicon.dart';
 
+// ignore: must_be_immutable
 class CustomChatCard extends StatelessWidget {
   String name;
   String message;

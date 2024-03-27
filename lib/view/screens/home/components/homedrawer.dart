@@ -46,6 +46,7 @@ class AppDrawer extends StatelessWidget {
               ),
               CustomTile(
                 title: 'Home',
+                onTap: () {},
               ),
               CustomExpansionTile(
                 title: 'Directory',
@@ -53,15 +54,19 @@ class AppDrawer extends StatelessWidget {
                 children: [
                   CustomTile(
                     title: 'Bussiness',
+                    onTap: () {},
                   ),
                   CustomTile(
                     title: 'Home Bussiness',
+                    onTap: () {},
                   ),
                   CustomTile(
                     title: 'Non - Profit',
+                    onTap: () {},
                   ),
                   CustomTile(
                     title: 'Directory Featured',
+                    onTap: () {},
                   ),
                 ],
               ),
@@ -71,15 +76,19 @@ class AppDrawer extends StatelessWidget {
                 children: [
                   CustomTile(
                     title: 'Event',
+                    onTap: () {},
                   ),
                   CustomTile(
                     title: 'Fundraisers',
+                    onTap: () {},
                   ),
                   CustomTile(
                     title: 'Event Featured',
+                    onTap: () {},
                   ),
                   CustomTile(
                     title: 'Fundraiser Featured',
+                    onTap: () {},
                   ),
                 ],
               ),
@@ -89,9 +98,11 @@ class AppDrawer extends StatelessWidget {
                 children: [
                   CustomTile(
                     title: 'Flyers',
+                    onTap: () {},
                   ),
                   CustomTile(
                     title: 'Menu',
+                    onTap: () {},
                   ),
                 ],
               ),
@@ -101,9 +112,11 @@ class AppDrawer extends StatelessWidget {
                 children: [
                   CustomTile(
                     title: 'Help Wanted',
+                    onTap: () {},
                   ),
                   CustomTile(
                     title: 'More Buzz',
+                    onTap: () {},
                   ),
                 ],
               ),

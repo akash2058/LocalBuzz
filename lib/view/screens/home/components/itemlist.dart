@@ -15,22 +15,19 @@ class ItemList extends StatefulWidget {
 
 class _ItemListState extends State<ItemList> {
   @override
-  
   void initState() {
     super.initState();
 
-    // Move the initialization code to didChangeDependencies() method
+    Future.delayed(Duration.zero, () {
+      _initializeAnimation();
+    });
   }
 
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-
-    // Access the context here to initialize your animation
+  void _initializeAnimation() {
     var state = Provider.of<HomeProvider>(context, listen: false);
 
     // Delay before starting the animation
-    Future.delayed(Duration(milliseconds: 200), () {
+    Future.delayed(const Duration(milliseconds: 200), () {
       _startScrollAnimation(state);
     });
   }
@@ -61,12 +58,6 @@ class _ItemListState extends State<ItemList> {
     );
 
     // After the animation completes, start scrolling forward again
-    Future.delayed(
-      Duration(seconds: state.imges.length),
-      () {
-        _startScrollAnimation(state);
-      },
-    );
   }
 
   @override

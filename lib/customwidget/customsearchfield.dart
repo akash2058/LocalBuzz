@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:localbuzz/view/constraints/appcolor.dart';
 import 'package:localbuzz/view/constraints/textstyle.dart';
 
+// ignore: must_be_immutable
 class CustomFormfield extends StatelessWidget {
   String hint;
   Widget? suffix;

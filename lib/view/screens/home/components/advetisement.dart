@@ -23,8 +23,7 @@ class AdvertisementCard extends StatelessWidget {
           width: MediaQuery.sizeOf(context).width,
           decoration: const BoxDecoration(
               image: DecorationImage(
-                fit: BoxFit.cover,
-                image: AssetImage(AppImages.adback))),
+                  fit: BoxFit.cover, image: AssetImage(AppImages.reminder))),
           child: Padding(
             padding: EdgeInsets.only(
                 top: 37.h, left: 16.w, right: 16.w, bottom: 37.h),
@@ -38,7 +37,7 @@ class AdvertisementCard extends StatelessWidget {
                       style: GoogleFonts.manrope(
                         fontSize: 20.sp,
                         color: AppColor.primarywhite,
-                        fontWeight: FontWeight.w700,
+                        fontWeight: FontWeight.w600,
                       )),
                   SizedBox(
                     height: 17.h,

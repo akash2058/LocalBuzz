@@ -16,6 +16,7 @@ import 'package:localbuzz/view/screens/home/components/homeslider.dart';
 import 'package:localbuzz/view/screens/home/components/itemlist.dart';
 import 'package:localbuzz/view/screens/home/components/upcomingeventlist.dart';
 import 'package:localbuzz/view/screens/home/components/upcommingtitle.dart';
+import 'package:localbuzz/view/screens/home/components/whatshappeningtitle.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -46,6 +47,11 @@ class HomeScreen extends StatelessWidget {
                     ),
                     const HomeSlider(),
                     const BuzzInformation(),
+                    const WhatsHappeningTitle(),
+                    const EventFeaturedAdsList(),
+                    SizedBox(
+                      height: 32.h,
+                    ),
                     const EventFeaturedTitle(),
                     const EventFeaturedAdsList(),
                     SizedBox(

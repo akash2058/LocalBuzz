@@ -1,17 +1,15 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:localbuzz/components/backbutton.dart';
 import 'package:localbuzz/components/menu_button.dart';
 import 'package:localbuzz/customwidget/customsearchfield.dart';
-import 'package:localbuzz/view/constraints/appcolor.dart';
 import 'package:localbuzz/view/constraints/appicons.dart';
-import 'package:localbuzz/view/screens/chat/components/userprofileimageicon.dart';
+import 'package:localbuzz/view/constraints/textstyle.dart';
 
-class ChatHead extends StatelessWidget {
-  const ChatHead({
-    super.key,
-  });
+// ignore: must_be_immutable
+class CustomHeader extends StatelessWidget {
+  String title;
+  CustomHeader({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +22,6 @@ class ChatHead extends StatelessWidget {
             height: 128.h,
             width: MediaQuery.sizeOf(context).width,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    bottomRight: Radius.circular(40.r),
-                    bottomLeft: Radius.circular(40.r)),
                 image: const DecorationImage(
                     fit: BoxFit.cover, image: AssetImage(AppImages.reminder))),
             child: Padding(
@@ -34,17 +29,8 @@ class ChatHead extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SizedBox(
-                    width: 24.h,
-                  ),
-                  UserProfileImage(
-                    image: AppImages.user,
-                    icon: Icon(
-                      Icons.circle,
-                      size: 16.h,
-                      color: AppColor.primarygreen,
-                    ),
-                  ),
+                  CustomBackButton(),
+                  Text(title, style: headertitle),
                   MenuButton(onTap: () {
                     Scaffold.of(context).openDrawer();
                   })

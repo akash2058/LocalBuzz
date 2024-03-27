@@ -7,13 +7,10 @@ class CustomDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.w),
-      child: Container(
-        height: 1.h,
-        width: 387.w,
-        color: AppColor.primarylightgrey,
-      ),
+    return Container(
+      height: 1.h,
+      width: MediaQuery.sizeOf(context).width,
+      color: AppColor.primarylightgrey,
     );
   }
 }

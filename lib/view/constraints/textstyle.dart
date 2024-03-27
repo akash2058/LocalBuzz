@@ -15,6 +15,20 @@ TextStyle get titleStyle {
       color: AppColor.primarylightblack);
 }
 
+TextStyle get buttonstyle {
+  return GoogleFonts.manrope(
+      fontSize: 16.sp,
+      fontWeight: FontWeight.w700,
+      color: AppColor.primarywhite);
+}
+
+TextStyle get headertitle {
+  return GoogleFonts.manrope(
+      fontSize: 20.sp,
+      fontWeight: FontWeight.w700,
+      color: AppColor.primarywhite);
+}
+
 TextStyle get dateStyle {
   return GoogleFonts.manrope(
       fontWeight: FontWeight.w600,
@@ -22,9 +36,23 @@ TextStyle get dateStyle {
       color: AppColor.primarygrey);
 }
 
+TextStyle get monthstyle {
+  return GoogleFonts.manrope(
+      fontWeight: FontWeight.w700,
+      fontSize: 14.sp,
+      color: AppColor.primarygreen);
+}
+
 TextStyle get seemorestyle {
   return GoogleFonts.manrope(
       fontSize: 16.sp,
+      fontWeight: FontWeight.w700,
+      color: AppColor.primaryyellowlight);
+}
+
+TextStyle get styles {
+  return GoogleFonts.manrope(
+      fontSize: 18.sp,
       fontWeight: FontWeight.w700,
       color: AppColor.primaryyellow);
 }
@@ -69,6 +97,18 @@ TextStyle get durationstyle {
       color: AppColor.primaryyellow);
 }
 
+TextStyle get editbuttonstyle {
+  return GoogleFonts.manrope(
+      fontSize: 16.sp,
+      fontWeight: FontWeight.w400,
+      color: AppColor.primaryyellow);
+}
+
+TextStyle get otherstyle {
+  return GoogleFonts.manrope(
+      fontSize: 16.sp, fontWeight: FontWeight.w700, color: AppColor.lightblack);
+}
+
 TextStyle get durationtextstyle {
   return GoogleFonts.manrope(
       fontSize: 18.sp,
@@ -79,6 +119,13 @@ TextStyle get durationtextstyle {
 TextStyle get subtitlestyle {
   return GoogleFonts.manrope(
       fontWeight: FontWeight.w400,
+      fontSize: 16.sp,
+      color: AppColor.primarygrey);
+}
+
+TextStyle get textstyle {
+  return GoogleFonts.manrope(
+      fontWeight: FontWeight.w700,
       fontSize: 16.sp,
       color: AppColor.primarygrey);
 }

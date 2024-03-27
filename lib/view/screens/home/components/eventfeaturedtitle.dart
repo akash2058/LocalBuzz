@@ -20,7 +20,11 @@ class EventFeaturedTitle extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Event Featured ADS', style: titleStyle),
+              Column(
+                children: [
+                  Text('Event Featured ADS', style: titleStyle),
+                ],
+              ),
               Column(
                 children: [
                   Text('See more', style: seemorestyle),
