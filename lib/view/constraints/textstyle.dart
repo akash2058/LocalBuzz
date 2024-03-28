@@ -15,6 +15,20 @@ TextStyle get titleStyle {
       color: AppColor.primarylightblack);
 }
 
+TextStyle get formfieldstyle {
+  return GoogleFonts.manrope(
+      fontSize: 16.sp,
+      fontWeight: FontWeight.w400,
+      color: AppColor.secondaryblack);
+}
+
+TextStyle get textsstyle {
+  return GoogleFonts.manrope(
+      fontSize: 32.sp,
+      fontWeight: FontWeight.w400,
+      color: AppColor.secondaryblack);
+}
+
 TextStyle get buttonstyle {
   return GoogleFonts.manrope(
       fontSize: 16.sp,
@@ -107,6 +121,11 @@ TextStyle get editbuttonstyle {
 TextStyle get otherstyle {
   return GoogleFonts.manrope(
       fontSize: 16.sp, fontWeight: FontWeight.w700, color: AppColor.lightblack);
+}
+
+TextStyle get dividerstyle {
+  return GoogleFonts.manrope(
+      fontSize: 16.sp, fontWeight: FontWeight.w400, color: AppColor.lightblack);
 }
 
 TextStyle get durationtextstyle {

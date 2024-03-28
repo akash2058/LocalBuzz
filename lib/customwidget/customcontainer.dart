@@ -100,7 +100,7 @@ class CustomContainer extends StatelessWidget {
                 backgroundcolor: AppColor.primaryyellow,
                 textcolor: AppColor.primarywhite,
                 title: 'Readmore',
-                ontap: ontap,
+                ontap: ontap, borderSide:  BorderSide.none,
               ),
               SizedBox(
                 height: 18.h,

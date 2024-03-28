@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:localbuzz/view/constraints/appcolor.dart';
@@ -14,50 +16,40 @@ class ItemList extends StatefulWidget {
 }
 
 class _ItemListState extends State<ItemList> {
+  late ScrollController _scrollController;
+  late Timer _timer;
+  final double _scrollIncrement = 1.0; // Adjust the scroll increment as needed
+  bool _scrollingForward = true;
+
   @override
   void initState() {
     super.initState();
+    _scrollController = ScrollController();
+    _startScrollAnimation();
+  }
 
-    Future.delayed(Duration.zero, () {
-      _initializeAnimation();
+  @override
+  void dispose() {
+    _timer.cancel();
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  void _startScrollAnimation() {
+    _timer = Timer.periodic(Duration(milliseconds: 25), (timer) {
+      if (_scrollingForward) {
+        _scrollController.jumpTo(_scrollController.offset + _scrollIncrement);
+        if (_scrollController.offset >=
+            _scrollController.position.maxScrollExtent) {
+          _scrollingForward = false;
+        }
+      } else {
+        _scrollController.jumpTo(_scrollController.offset - _scrollIncrement);
+        if (_scrollController.offset <= 0) {
+          _scrollingForward = true;
+        }
+      }
     });
-  }
-
-  void _initializeAnimation() {
-    var state = Provider.of<HomeProvider>(context, listen: false);
-
-    // Delay before starting the animation
-    Future.delayed(const Duration(milliseconds: 200), () {
-      _startScrollAnimation(state);
-    });
-  }
-
-  void _startScrollAnimation(HomeProvider state) {
-    // Animate scroll to the max extent
-    state.scrollController.animateTo(
-      state.scrollController.position.maxScrollExtent,
-      duration: Duration(seconds: state.imges.length * 2),
-      curve: Curves.linear,
-    );
-
-    // After the animation completes, reverse the scroll
-    Future.delayed(
-      Duration(seconds: state.imges.length),
-      () {
-        _reverseScroll(state);
-      },
-    );
-  }
-
-  void _reverseScroll(HomeProvider state) {
-    // Animate scroll to the min extent
-    state.scrollController.animateTo(
-      state.scrollController.position.minScrollExtent,
-      duration: Duration(seconds: state.imges.length),
-      curve: Curves.linear,
-    );
-
-    // After the animation completes, start scrolling forward again
   }
 
   @override
@@ -69,7 +61,7 @@ class _ItemListState extends State<ItemList> {
           width: MediaQuery.sizeOf(context).width,
           child: ListView.builder(
             reverse: true,
-            controller: img.scrollController,
+            controller: _scrollController,
             physics: const BouncingScrollPhysics(
               parent: BouncingScrollPhysics(),
             ),

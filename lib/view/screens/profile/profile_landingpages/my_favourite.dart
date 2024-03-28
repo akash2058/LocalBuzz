@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:localbuzz/customwidget/customdivider.dart';
 import 'package:localbuzz/customwidget/customfavoritecard.dart';
 import 'package:localbuzz/customwidget/customhead.dart';
 import 'package:localbuzz/view/constraints/appcolor.dart';
@@ -76,26 +77,8 @@ class MyFavourite extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            height: 2.h,
-                            width: 150.w,
-                            decoration:
-                                BoxDecoration(color: AppColor.primarygrey),
-                          ),
-                          Text(
-                            'SEE MORE',
-                            style: otherstyle,
-                          ),
-                          Container(
-                            height: 2.h,
-                            width: 150.w,
-                            decoration:
-                                BoxDecoration(color: AppColor.primarygrey),
-                          ),
-                        ],
+                      Customdivider(
+                        text: 'SEE MORE',
                       ),
                       SizedBox(
                         height: 32.h,
@@ -111,3 +94,4 @@ class MyFavourite extends StatelessWidget {
     );
   }
 }
+

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:localbuzz/provider/appproviders.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:localbuzz/view/splashscreen/splashscreen.dart';
+import 'package:localbuzz/view/welcome_screen/welcome_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       child: MultiProvider(
           providers: getProviders(),
           child: const MaterialApp(
-              debugShowCheckedModeBanner: false, home: SplashScreen())),
+              debugShowCheckedModeBanner: false, home: WelcomeScreen())),
     );
   }
 }

@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:localbuzz/view/constraints/appicons.dart';
 import 'package:localbuzz/view/screens/home/components/eventcard.dart';
 
-
 class UpcomingEventList extends StatelessWidget {
   const UpcomingEventList({
     super.key,
@@ -21,11 +20,13 @@ class UpcomingEventList extends StatelessWidget {
                 (index) => Row(
                       children: [
                         EventCard(
-                            date: '27 FEB, 2020',
-                            img: AppImages.pictwo,
-                            location: 'Sir Winston Churchill Park',
-                            title:
-                                'Leo Matinee Movie at the Plamondon Festival Centre Theatre'),
+                          date: '27 FEB, 2020',
+                          img: AppImages.pictwo,
+                          location: 'Sir Winston Churchill Park',
+                          title:
+                              'Leo Matinee Movie at the Plamondon Festival Centre Theatre',
+                          onTap: () {},
+                        ),
                         SizedBox(
                           width: 22.w,
                         )

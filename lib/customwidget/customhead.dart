@@ -38,22 +38,22 @@ class CustomHeader extends StatelessWidget {
               ),
             ),
           ),
-          Positioned.fill(
-            top: 91.h,
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10.w),
-              child: CustomFormfield(
-                prefix: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16.w),
-                  child: Image.asset(
-                    AppImages.searchicon,
-                    height: 16.h,
-                  ),
-                ),
-                hint: 'What are you looking for?...',
-              ),
-            ),
-          )
+          // Positioned.fill(
+          //   top: 91.h,
+          //   child: Padding(
+          //     padding: EdgeInsets.symmetric(horizontal: 10.w),
+          //     child: CustomFormfield(
+          //       prefix: Padding(
+          //         padding: EdgeInsets.symmetric(horizontal: 16.w),
+          //         child: Image.asset(
+          //           AppImages.searchicon,
+          //           height: 16.h,
+          //         ),
+          //       ),
+          //       hint: 'What are you looking for?...',
+          //     ),
+          //   ),
+          // )
         ],
       ),
     );

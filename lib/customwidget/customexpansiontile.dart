@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:localbuzz/view/constraints/appcolor.dart';
 import 'package:localbuzz/view/constraints/textstyle.dart';
@@ -6,17 +8,18 @@ import 'package:localbuzz/view/constraints/textstyle.dart';
 class CustomExpansionTile extends StatelessWidget {
   String title;
   List<Widget> children;
-  VoidCallback onTap;
-
-  CustomExpansionTile(
-      {super.key,
-      required this.title,
-      required this.children,
-      required this.onTap});
+  void Function(bool)? onchanged;
+  CustomExpansionTile({
+    super.key,
+    required this.title,
+    required this.children,
+    this.onchanged,
+  });
 
   @override
   Widget build(BuildContext context) {
     return ExpansionTile(
+        onExpansionChanged: onchanged,
         visualDensity: VisualDensity(horizontal: -4, vertical: -4),
         collapsedShape:
             Border(top: BorderSide(color: AppColor.secondarylightgrey)),

@@ -85,15 +85,6 @@ class _MainMenuState extends State<MainMenu> {
                             Stack(
                               alignment: Alignment.topRight,
                               children: [
-                                Positioned.fill(
-                                  top: -12.h,
-                                  left: 10.w,
-                                  child: Icon(
-                                    Icons.circle,
-                                    size: 10.h,
-                                    color: AppColor.primaryyellow,
-                                  ),
-                                ),
                                 Image.asset(
                                   AppImages.chat,
                                   height: 18.h,
@@ -102,6 +93,15 @@ class _MainMenuState extends State<MainMenu> {
                                   color: menu.currenttab == 1
                                       ? AppColor.primaryyellow
                                       : AppColor.primarygrey,
+                                ),
+                                Positioned.fill(
+                                  top: -12.h,
+                                  left: 10.w,
+                                  child: Icon(
+                                    Icons.circle,
+                                    size: 10.h,
+                                    color: AppColor.primaryyellow,
+                                  ),
                                 ),
                               ],
                             ),

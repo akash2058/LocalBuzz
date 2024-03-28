@@ -4,11 +4,11 @@ import 'package:localbuzz/view/constraints/appcolor.dart';
 import 'package:localbuzz/view/constraints/textstyle.dart';
 
 // ignore: must_be_immutable
-class CustomFormfield extends StatelessWidget {
+class CustomSearchForm extends StatelessWidget {
   String hint;
   Widget? suffix;
   Widget? prefix;
-  CustomFormfield({super.key, this.suffix, this.prefix, required this.hint});
+  CustomSearchForm({super.key, this.suffix, this.prefix, required this.hint});
 
   @override
   Widget build(BuildContext context) {

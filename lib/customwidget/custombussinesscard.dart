@@ -74,7 +74,7 @@ class BussinessCard extends StatelessWidget {
                       textcolor: AppColor.primarywhite,
                       backgroundcolor: AppColor.primaryyellow,
                       title: 'Readmore',
-                      ontap: () {}),
+                      ontap: () {}, borderSide: BorderSide.none,),
                 ],
               ),
             ),

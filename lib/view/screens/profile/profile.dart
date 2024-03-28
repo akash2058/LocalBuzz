@@ -7,6 +7,7 @@ import 'package:localbuzz/view/constraints/textstyle.dart';
 import 'package:localbuzz/view/screens/profile/components/profiledetailcard.dart';
 import 'package:localbuzz/view/screens/profile/components/profilehead.dart';
 import 'package:localbuzz/view/screens/profile/profile_landingpages/edit_profile.dart';
+import 'package:localbuzz/view/screens/profile/profile_landingpages/member_ship.dart';
 import 'package:localbuzz/view/screens/profile/profile_landingpages/my_favourite.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -68,7 +69,10 @@ class ProfileScreen extends StatelessWidget {
                       size: 24.h,
                     ),
                     title: 'My Membership Details',
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context,
+                          CustomPageRoute(child: const MemberShipPage()));
+                    },
                   ),
                   CustomTile(
                     leading: Icon(

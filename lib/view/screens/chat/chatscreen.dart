@@ -7,7 +7,6 @@ import 'package:localbuzz/view/constraints/textstyle.dart';
 import 'package:localbuzz/view/screens/chat/components/chatheader.dart';
 import 'package:localbuzz/view/screens/home/components/homedrawer.dart';
 
-
 class ChatScreen extends StatelessWidget {
   const ChatScreen({Key? key}) : super(key: key);
 
@@ -25,9 +24,6 @@ class ChatScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
-                    height: 32.h,
-                  ),
                   Text(
                     'Message',
                     style: screentitlestyle,
